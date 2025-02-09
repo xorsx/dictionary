@@ -10,6 +10,34 @@
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.Dictionary h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.Dictionary section {
+  background: #d7ccb6;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.Dictionary input {
+  display: block;
+  width: 100%;
+  background: #f1ebe1;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.Dictionary .hint {
+  display: block;
+
+  padding: 5px;
+}
 h2 {
   font-size: 36px;
 }
