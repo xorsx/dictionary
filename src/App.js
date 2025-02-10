@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Dictionary from "./Dictionary.js";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <div className="container">
         <header>Dictionary</header>
         <main>
-          <Dictionary defaultKeyword="nature" />
+          <Dictionary defaultKeyword="book" />
         </main>
         <footer>Coded by Olivia Swann</footer>
       </div>

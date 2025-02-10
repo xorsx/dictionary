@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import "./Dictionary.css";
 import axios from "axios";
 import Results from "./Results.js";
+import Photos from "./Photos.js";
 
 export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
   function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
 
-  function handlePexelsResponse(response) {
+  function handlePhotosResponse(response) {
     console.log(response);
+    setPhotos(response.data.photos);
   }
 
   function search() {
@@ -21,14 +24,9 @@ export default function Dictionary(props) {
     console.log(apiUrl);
     axios.get(apiUrl).then(handleDictionaryResponse);
 
-    let pexelsApiKey =
-      "Mn7DKqMCM0dyqPpqBDqPvq5SjPVyEOylP9sY6WDobTjCp1GY7nC9B8es";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
-    axios
-      .get(pexelsApiUrl, {
-        headers: { Authorization: `Bearer ${pexelsApiKey}` },
-      })
-      .then(handlePexelsResponse);
+    let photosApiKey = "e7fo6tea7dab2f64b9d0694388b0ea0f";
+    let photosApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${photosApiKey}`;
+    axios.get(photosApiUrl).then(handlePhotosResponse);
   }
 
   function handleSubmit(event) {
@@ -63,6 +61,7 @@ export default function Dictionary(props) {
           </div>
         </section>
         <Results results={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
