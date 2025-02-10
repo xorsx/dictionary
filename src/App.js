@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <header>Dictionary</header>
         <main>
-          <Dictionary defaultKeyword="reading" />
+          <Dictionary defaultKeyword="nature" />
         </main>
         <footer>Coded by Olivia Swann</footer>
       </div>
