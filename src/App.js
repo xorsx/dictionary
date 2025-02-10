@@ -10,7 +10,10 @@ function App() {
         <main>
           <Dictionary defaultKeyword="forest" />
         </main>
-        <footer>Coded by Olivia Swann</footer>
+        <footer>
+          Coded by Olivia Swann open-source on{" "}
+          <a href="https://github.com/xorsx/dictionary">Github</a>
+        </footer>
       </div>
     </div>
   );
